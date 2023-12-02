@@ -4,7 +4,7 @@ using UnityEngine;
 public class ChangeText : MonoBehaviour
 {
     public TextMeshPro textMesh;
-    private float value = 5;
+    public float value = 5;
 
     public void UpdateText(float changeValue)
     {
@@ -14,5 +14,10 @@ public class ChangeText : MonoBehaviour
         {
             textMesh.text = newText;
         }
+    }
+
+    public float getValue()
+    {
+        return value;
     }
 }

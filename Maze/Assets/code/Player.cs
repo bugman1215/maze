@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     private float waitTime = 0.2f;
     private float  healthvalue = 5;
     public ChangeText changeTextScript;
+    public WinText winTextScript;
+    public float thresholdDistance = 1.0f;
+    public Vector3 targetPosition;
+    public Vector3 targetPosition2;
 
 
     // Start is called before the first frame update
@@ -31,7 +35,7 @@ public class Player : MonoBehaviour
         }
 
 
-        if (lastTimeChangecolor - Time.time >= waitTime) {
+        if (Time.time-lastTimeChangecolor >= waitTime) {
             GetComponent<Renderer>().material.color = Color.white;
 
         }
@@ -53,8 +57,14 @@ public class Player : MonoBehaviour
 
         //// Rotate the player around the y-axis
         //transform.Rotate(Vector3.up * mouseX);
-
+        if ( (Vector3.Distance(transform.position, targetPosition) < thresholdDistance || Vector3.Distance(transform.position, targetPosition2) < thresholdDistance) && changeTextScript.getValue() >0)
+        {
+            winTextScript.UpdateText("Win!");
+            Time.timeScale = 0;
+        }
     }
+
+
     private void Fire()
     {
         
@@ -72,6 +82,11 @@ public class Player : MonoBehaviour
             lastTimeChangecolor = Time.time;
             healthvalue = healthvalue - 1;
             changeTextScript.UpdateText(-1f);
+            if (changeTextScript.getValue() == 0)
+            {
+                winTextScript.UpdateText("Lose");
+                Time.timeScale = 0;
+            }
         }
 
         

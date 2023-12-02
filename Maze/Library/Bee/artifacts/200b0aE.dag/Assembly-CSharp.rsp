@@ -388,6 +388,7 @@
 "Assets/code/Monster.cs"
 "Assets/code/Player.cs"
 "Assets/code/Spawner.cs"
+"Assets/code/winText.cs"
 -langversion:9.0
 
 /deterministic

@@ -63,6 +63,7 @@
     <Compile Include="Assets/code/Player.cs" />
     <Compile Include="Assets/code/Spawner.cs" />
     <Compile Include="Assets/code/healthValue.cs" />
+    <Compile Include="Assets/code/winText.cs" />
     <Compile Include="Assets/code/cameramovement.cs" />
   </ItemGroup>
   <ItemGroup>
