@@ -6,14 +6,14 @@ using static UnityEditor.PlayerSettings;
 public class Spawner : MonoBehaviour
 {
 
-    public Monster monsterPrefab; 
+    public GameObject monsterPrefab; 
     public float spawnRadius = 10f; 
     public int maxMonsters = 3; 
 
     void Update()
     {
         
-        if (GameObject.FindGameObjectsWithTag("Monster").Length < maxMonsters)
+        if (GameObject.FindGameObjectsWithTag("Monster").Length <= 0)
         {
             SpawnMonster();
         }

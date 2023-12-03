@@ -6,11 +6,15 @@ public class Player : MonoBehaviour
 
     public float speed = 3.0f;
     private Rigidbody rb;
-    public float mouseSensitivity = -100f;
+    public float mouseSensitivity = -1000f;
     private float lastTimeChangecolor = 0f;
     private float waitTime = 0.2f;
     private float  healthvalue = 5;
     public ChangeText changeTextScript;
+    public WinText winTextScript;
+    public float thresholdDistance = 1.0f;
+    public Vector3 targetPosition;
+    public Vector3 targetPosition2;
 
 
     // Start is called before the first frame update
@@ -29,13 +33,13 @@ public class Player : MonoBehaviour
             Fire();
 
         }
-        
-        
-        if (lastTimeChangecolor - Time.time >= waitTime) {
+
+
+        if (Time.time-lastTimeChangecolor >= waitTime) {
             GetComponent<Renderer>().material.color = Color.white;
 
         }
-            
+
 
 
     }
@@ -46,15 +50,21 @@ public class Player : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        Vector3 movement = new Vector3(moveHorizontal,0.0f, moveVertical);
         transform.Translate(movement * speed * Time.deltaTime);
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
 
-        // Rotate the player around the y-axis
-        transform.Rotate(Vector3.up * mouseX);
-
+        //// Rotate the player around the y-axis
+        //transform.Rotate(Vector3.up * mouseX);
+        if ((Vector3.Distance(transform.position, targetPosition) < thresholdDistance || Vector3.Distance(transform.position, targetPosition2) < thresholdDistance))
+        {
+            winTextScript.UpdateText("Win!");
+            Time.timeScale = 0;
+        }
     }
+
+
     private void Fire()
     {
         
@@ -66,11 +76,39 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("Monster")) {
+            GetComponent<Renderer>().material.color = Color.red;
 
-        GetComponent<Renderer>().material.color = Color.red;
-        lastTimeChangecolor = Time.time;
-        healthvalue = healthvalue - 1;
-        changeTextScript.UpdateText(-1f);
+            lastTimeChangecolor = Time.time;
+            healthvalue = healthvalue - 1;
+            changeTextScript.UpdateText(-1f);
+            if (changeTextScript.getValue() == 0)
+            {
+                winTextScript.UpdateText("Lose");
+                Time.timeScale = 0;
+            }
+        }
+        if (collision.gameObject.CompareTag("Target"))
+        {
+
+            winTextScript.UpdateText("Win!");
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.CompareTag("Target"))
+        {
+
+            winTextScript.UpdateText("Win!");
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.CompareTag("Food"))
+        {
+
+            changeTextScript.UpdateText(1f);
+            healthvalue = healthvalue + 1;
+        }
+
+
+
 
 
 

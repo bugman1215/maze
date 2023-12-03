@@ -8,9 +8,7 @@ public class WinText : MonoBehaviour
 
     public void UpdateText(string newText)
     {
-        if (textMesh != null)
-        {
-            textMesh.text = newText;
-        }
+      
+        textMesh.text = newText;
     }
 }
