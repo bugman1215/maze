@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1072,6 +1072,7 @@ MonoBehaviour:
   thresholdDistance: 1
   targetPosition: {x: 0, y: 0, z: 0}
   targetPosition2: {x: 0, y: 0, z: 0}
+  gameOver: 0
 --- !u!54 &359201408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2485,7 +2486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MENU
+  m_text: RESTART
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2762,6 +2763,7 @@ MonoBehaviour:
   thresholdDistance: 1
   targetPosition: {x: 0, y: 0, z: 0}
   targetPosition2: {x: 0, y: 0, z: 0}
+  gameOver: 0
 --- !u!1 &1302314757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4056,6 +4058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 355401181}
+  player: {fileID: 2118305529}
 --- !u!1001 &1962870089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4225,6 +4228,7 @@ MonoBehaviour:
   thresholdDistance: 1
   targetPosition: {x: -9.48, y: -0.02, z: 0.62}
   targetPosition2: {x: 7.82, y: 0.64, z: 0.67}
+  gameOver: 0
 --- !u!54 &2118305530
 Rigidbody:
   m_ObjectHideFlags: 0

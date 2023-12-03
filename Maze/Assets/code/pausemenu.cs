@@ -7,13 +7,25 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public Player player;
+    public GameObject resumeButton;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            bool gameOver = player.GetGameOver();
             if (GameIsPaused)
             {
-                Resume();
+                if (gameOver)
+                {
+                    tomenu();
+                }
+                else
+                {
+                    Resume();
+                }
+                //Resume();
+
             }
             else
             {
@@ -23,11 +35,19 @@ public class PauseMenu : MonoBehaviour
         }
 
     }
+
+    //public void RestartGame()
+    //{
+    //    string currentSceneName = SceneManager.GetActiveScene().name;
+
+    //    SceneManager.LoadScene(currentSceneName);
+    //}
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+
 
     }
     void Pause()
@@ -35,11 +55,21 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        bool gameOver = player.GetGameOver();
+        if (resumeButton != null)
+        {
+            resumeButton.SetActive(!gameOver);
+        }
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
     public void tomenu()
     {
-       
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 }

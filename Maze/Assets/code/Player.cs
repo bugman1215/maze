@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float thresholdDistance = 1.0f;
     public Vector3 targetPosition;
     public Vector3 targetPosition2;
+    public bool gameOver = false;
 
 
     // Start is called before the first frame update
@@ -28,11 +29,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Move();
-        if (Input.GetMouseButtonDown(0))
-        {
-            Fire();
-
-        }
 
 
         if (Time.time-lastTimeChangecolor >= waitTime) {
@@ -41,6 +37,12 @@ public class Player : MonoBehaviour
         }
 
 
+
+    }
+
+    public bool GetGameOver()
+    {
+        return gameOver;
 
     }
 
@@ -61,14 +63,10 @@ public class Player : MonoBehaviour
         {
             winTextScript.UpdateText("Win!");
             Time.timeScale = 0;
+            gameOver = true;
         }
     }
 
-
-    private void Fire()
-    {
-        
-    }
 
 
 
@@ -82,10 +80,11 @@ public class Player : MonoBehaviour
             lastTimeChangecolor = Time.time;
             healthvalue = healthvalue - 1;
             changeTextScript.UpdateText(-1f);
-            if (changeTextScript.getValue() == 0)
+            if (changeTextScript.getValue() <= 0)
             {
                 winTextScript.UpdateText("Lose");
                 Time.timeScale = 0;
+                gameOver = true;
             }
         }
         if (collision.gameObject.CompareTag("Target"))
@@ -93,12 +92,14 @@ public class Player : MonoBehaviour
 
             winTextScript.UpdateText("Win!");
             Time.timeScale = 0;
+            gameOver = true;
         }
         if (collision.gameObject.CompareTag("Target"))
         {
 
             winTextScript.UpdateText("Win!");
             Time.timeScale = 0;
+            gameOver = true;
         }
         if (collision.gameObject.CompareTag("Food"))
         {

@@ -1,11 +1,14 @@
 ﻿<Properties StartupConfiguration="{203E294F-6A57-B963-05D6-83EB30201135}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/code/healthValue.cs">
     <Files>
-      <File FileName="Assets/code/menu.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/menu.cs" Line="13" Column="1" />
       <File FileName="Assets/Pause Menu Assets/Scripts/Pausemenu/PauseManager.cs" Line="430" Column="43" />
-      <File FileName="Assets/code/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/Player.cs" Line="69" Column="1" />
       <File FileName="Assets/code/winText.cs" Line="12" Column="33" />
       <File FileName="Assets/code/healthValue.cs" Line="1" Column="1" />
+      <File FileName="Assets/code/pausemenu.cs" Line="28" Column="14" />
+      <File FileName="Assets/code/cameramovement.cs" Line="3" Column="43" />
+      <File FileName="Assets/code/Coin.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
