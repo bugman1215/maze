@@ -1,0 +1,2 @@
+Sprites: https://assetstore.unity.com/packages/templates/tutorials/chomp-man-3d-game-kit-tutorial-174982
+Audio: https://mixkit.co/free-sound-effects/game/?page=3

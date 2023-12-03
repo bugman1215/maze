@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641228, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -742,15 +742,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is a Pac man game in 3D maze.
+  m_text: 'This is a game in 3D maze.
 
-    You may control the player cube''s
-    movement via "w" "s" "a" "d" or "up" "down" "left" "right", press esc to pause
-    the game anytime and return to menu.
+    You may control the player cube''s movement
+    via "w" "s" "a" "d" or "up" "down" "left" "right", press esc to pause the game
+    anytime and restart.
 
-    Be careful, there will be ghosts chasing
-    and attacking you. Avoid them and eat coins on your way to make sure you survive,
-    reach the exit of the maze and you win! (if you die halfway, you lose)'
+    Be careful, there will be ghosts chasing and attacking
+    you. Avoid them and eat fruits  on your way to make sure you survive, reach the
+    exit of the maze and you win! (if you die halfway, you lose)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

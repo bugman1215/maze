@@ -4059,6 +4059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 355401181}
   player: {fileID: 2118305529}
+  resumeButton: {fileID: 901885085}
 --- !u!1001 &1962870089
 PrefabInstance:
   m_ObjectHideFlags: 0
