@@ -5,11 +5,14 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public ChangeText changeTextScript2;
-    public AudioSource blip;
-    public AudioClip fruit;
+    //public AudioSource blip;
+    //public AudioClip fruit;
     // Start is called before the first frame update
+    //private AudioSource audioSource;
+
     void Start()
     {
+        //audioSource = GetComponents<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,7 +30,7 @@ public class Coin : MonoBehaviour
         {
             
             changeTextScript2.UpdateText(num);
-            blip.PlayOneShot(fruit);
+            //audioSource.Play();
             Destroy(gameObject);
      
 

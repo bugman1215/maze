@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
         //// Rotate the player around the y-axis
         //transform.Rotate(Vector3.up * mouseX);
-        if ( (Vector3.Distance(transform.position, targetPosition) < thresholdDistance || Vector3.Distance(transform.position, targetPosition2) < thresholdDistance) && changeTextScript.getValue() >0)
+        if ( (Vector3.Distance(transform.position, targetPosition) < thresholdDistance || Vector3.Distance(transform.position, targetPosition2) < thresholdDistance))
         {
             winTextScript.UpdateText("Win!");
             Time.timeScale = 0;
