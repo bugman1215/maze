@@ -23,13 +23,10 @@ public class Coin : MonoBehaviour
 
     
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        float num = 1;
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            
-            changeTextScript2.UpdateText(num);
             //audioSource.Play();
             Destroy(gameObject);
      

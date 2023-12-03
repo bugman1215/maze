@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
 
         //// Rotate the player around the y-axis
         //transform.Rotate(Vector3.up * mouseX);
-        if ( (Vector3.Distance(transform.position, targetPosition) < thresholdDistance || Vector3.Distance(transform.position, targetPosition2) < thresholdDistance))
+        if ((Vector3.Distance(transform.position, targetPosition) < thresholdDistance || Vector3.Distance(transform.position, targetPosition2) < thresholdDistance))
         {
             winTextScript.UpdateText("Win!");
             Time.timeScale = 0;
@@ -88,8 +88,27 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0;
             }
         }
+        if (collision.gameObject.CompareTag("Target"))
+        {
 
-        
+            winTextScript.UpdateText("Win!");
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.CompareTag("Target"))
+        {
+
+            winTextScript.UpdateText("Win!");
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.CompareTag("Food"))
+        {
+
+            changeTextScript.UpdateText(1f);
+            healthvalue = healthvalue + 1;
+        }
+
+
+
 
 
 
