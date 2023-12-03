@@ -387,9 +387,14 @@
 "Assets/code/cameramovement.cs"
 "Assets/code/Coin.cs"
 "Assets/code/healthValue.cs"
+"Assets/code/menu.cs"
 "Assets/code/Monster.cs"
 "Assets/code/Player.cs"
 "Assets/code/Spawner.cs"
+"Assets/Pause Menu Assets/Scripts/Pausemenu/PauseManager.cs"
+"Assets/Pause Menu Assets/Scripts/Pausemenu/SaveSettings.cs"
+"Assets/Pause Menu Assets/Scripts/Utlities/CoroutineUtlities.cs"
+"Assets/Pause Menu Assets/Scripts/Utlities/Rotate.cs"
 -langversion:9.0
 
 /deterministic
